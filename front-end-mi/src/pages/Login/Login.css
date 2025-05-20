@@ -1,0 +1,158 @@
+/* Contenedor principal */
+.login-container {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+  }
+  
+  /* Sección izquierda (formulario) */
+  .login-form {
+    flex: 1;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    box-shadow: 5px 0 15px rgba(0, 0, 0, 0.1); /* Sombra sutil en el borde derecho */
+  }
+  
+  .login-form h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #333;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  
+  .login-form p {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 25px;
+    text-align: center;
+    max-width: 80%;
+    line-height: 1.5; /* Mejor espaciado entre líneas */
+  }
+  
+  .login-form form {
+    width: 100%;
+    max-width: 320px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .login-form label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: #444;
+  }
+  
+  .login-form input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd; /* Borde más suave */
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.3s ease-in-out;
+    background-color: #f9f9f9; /* Fondo más claro para los inputs */
+  }
+  
+  .login-form input:focus {
+    border-color: #62b5ed;
+    outline: none;
+    box-shadow: 0 0 5px rgba(98, 181, 237, 0.5);
+    background-color: #fff; /* Fondo blanco al enfocar */
+  }
+  
+  /* Estilos para el enlace "¿Has olvidado tu contraseña?" */
+  .forgot-password {
+    display: block;
+    margin-top: 10px; /* Separación del campo de contraseña */
+    font-size: 0.9rem;
+    color: #62b5ed;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+  }
+  
+  .forgot-password:hover {
+    color: #4a9cd4;
+    text-decoration: underline;
+  }
+  
+  /* Estilos para el checkbox "Recuérdame" */
+  .remember-me {
+    display: flex;
+    align-items: center; /* Alinea el checkbox y el texto verticalmente */
+    gap: 8px; /* Espacio entre el checkbox y el texto */
+    margin-bottom: 20px; /* Separación del botón de inicio de sesión */
+  }
+  
+  .remember-me input {
+    cursor: pointer;
+    margin: 0; /* Elimina el margen por defecto */
+  }
+  
+  .remember-me label {
+    font-size: 0.9rem;
+    color: #333;
+    cursor: pointer;
+  }
+  
+  button {
+    width: 100%;
+    background-color: #62b5ed;
+    color: white;
+    border: none;
+    padding: 12px;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    margin-top: 10px; /* Espaciado superior */
+  }
+  
+  button:hover {
+    background-color: #4a9cd4;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 10px rgba(74, 156, 212, 0.3);
+  }
+  
+  .signup-text {
+    font-size: 0.9rem;
+    color: #555;
+    margin-top: 20px;
+    text-align: center;
+  }
+  
+  .signup-text a {
+    color: #62b5ed;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease-in-out;
+  }
+  
+  .signup-text a:hover {
+    color: #4a9cd4;
+    text-decoration: underline;
+  }
+  
+  /* Sección derecha (imagen) */
+  .login-image {
+    flex: 2;
+    background: linear-gradient(to top, #ffffff, #62b5ed);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    position: relative;
+  }
+  
+  .login-image img {
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+  }
