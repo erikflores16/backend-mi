@@ -162,56 +162,58 @@ const CombinedPage = () => {
     <div className="combined-container">
       {/* Navbar */}
       <nav className="navbar">
-        <div className="navbar-logo">
-          <img src="/MI.png" alt="Logo MI" className="logo-image" />
+        <div className="navbar-container">
+          <div className="navbar-logo">
+            <img src="/MI.png" alt="Logo MI" className="logo-image" />
+          </div>
+          <ul className="navbar-list">
+            <li className="navbar-item">
+              <Link
+                to="inicio"
+                smooth={true}
+                duration={500}
+                className="navbar-link"
+              >
+                Inicio
+              </Link>
+            </li>
+            <li className="navbar-item">
+              <Link
+                to="nosotros"
+                smooth={true}
+                duration={500}
+                className="navbar-link"
+              >
+                Nosotros
+              </Link>
+            </li>
+            <li className="navbar-item">
+              <Link
+                to="universidades"
+                smooth={true}
+                duration={500}
+                className="navbar-link"
+              >
+                Universidades
+              </Link>
+            </li>
+            <li className="navbar-item">
+              <Link
+                to="universidad-ideal"
+                smooth={true}
+                duration={500}
+                className="navbar-link"
+              >
+                Descubre tu Universidad Ideal
+              </Link>
+            </li>
+            <li className="navbar-item">
+              <Link to="/" onClick={handleLogout} className="navbar-link">
+                Cerrar sesión
+              </Link>
+            </li>
+          </ul>
         </div>
-        <ul className="navbar-list">
-          <li className="navbar-item">
-            <Link
-              to="inicio"
-              smooth={true}
-              duration={500}
-              className="navbar-link"
-            >
-              Inicio
-            </Link>
-          </li>
-          <li className="navbar-item">
-            <Link
-              to="nosotros"
-              smooth={true}
-              duration={500}
-              className="navbar-link"
-            >
-              Nosotros
-            </Link>
-          </li>
-          <li className="navbar-item">
-            <Link
-              to="universidades"
-              smooth={true}
-              duration={500}
-              className="navbar-link"
-            >
-              Universidades
-            </Link>
-          </li>
-          <li className="navbar-item">
-            <Link
-              to="universidad-ideal"
-              smooth={true}
-              duration={500}
-              className="navbar-link"
-            >
-              Descubre tu Universidad Ideal
-            </Link>
-          </li>
-          <li className="navbar-item">
-            <Link to="/" onClick={handleLogout} className="navbar-link">
-              Cerrar sesion
-            </Link>
-          </li>
-        </ul>
       </nav>
 
       {/* Resto de la página */}
