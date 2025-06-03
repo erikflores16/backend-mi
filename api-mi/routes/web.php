@@ -1,5 +1,5 @@
 <?php
-
+use App\Http\Controllers\WhatsappController; 
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,3 +16,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/webhook', [WhatsappController::class, "token"]);
+
+Route::post('/webhook', [WhatsappController::class, "escuchar"]);

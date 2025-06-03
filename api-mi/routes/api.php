@@ -37,6 +37,9 @@ Route::post('/study-plans/{id}', [PlanController::class, 'update']);
 Route::delete('/study-plans/{id}', [PlanController::class, 'destroy']);
 
 
+use App\Http\Controllers\PaymentController;
+
+Route::middleware('auth:sanctum')->post('/payments', [PaymentController::class, 'process']);
 
 
 Route::prefix('careers')->group(function () {

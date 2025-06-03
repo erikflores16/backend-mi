@@ -14,6 +14,16 @@
 $app = new Illuminate\Foundation\Application(
     $_ENV['APP_BASE_PATH'] ?? dirname(__DIR__)
 );
+use Illuminate\Foundation\Configuration\Exceptions;
+// use Illuminate\Foundation\Configuration\Middleware;
+
+
+
+// Middleware::group(function (Middleware $middleware) {
+//     $middleware->validateCorrTokens(except: [
+//         "webhook/",
+//     ]);
+// });
 
 /*
 |--------------------------------------------------------------------------
@@ -25,6 +35,12 @@ $app = new Illuminate\Foundation\Application(
 | incoming requests to this application from both the web and CLI.
 |
 */
+// Middleware::group(function (Middleware $middleware) {
+//     $middleware->validateCorrTokens(except: [
+//         "webhook/",
+//     ]);
+// });
+
 
 $app->singleton(
     Illuminate\Contracts\Http\Kernel::class,

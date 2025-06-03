@@ -12,5 +12,9 @@
         "postcss": "^8.5.3",
         "tailwindcss": "^4.1.1",
         "vite": "^5.0.0"
+    },
+    "dependencies": {
+        "react-credit-cards-2": "^1.0.3",
+        "sweetalert2": "^11.22.0"
     }
 }
