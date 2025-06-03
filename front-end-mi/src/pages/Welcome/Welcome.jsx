@@ -175,27 +175,45 @@ const CombinedPage = () => {
         </div>
       </section>
 
-      {/* Sección Descubre tu Universidad Ideal */}
-      <section id="universidad-ideal" className="discover-section">
-        <div className="discover-container">
-          <h1 className="discover-title">Descubre tu Universidad Ideal</h1>
-          <div className="underline"></div>
-          <p className="discover-text">
-            ¿No sabes qué universidad se adapta mejor a tus intereses?<br />
-            ¡Responde nuestro test y te lo diremos en minutos!
-          </p>
-          <button 
+   {/* Sección Descubre tu Universidad Ideal */}
+<section id="universidad-ideal" className="discover-section">
+  <div className="discover-container">
+    <h1 className="discover-title">Descubre tu Universidad Ideal</h1>
+    <div className="underline"></div>
+    <p className="discover-text">
+      ¿No sabes qué universidad se adapta mejor a tus intereses?<br />
+      ¡Responde nuestro test y te lo diremos en minutos!
+    </p>
+
+    <button 
       className="discover-button"
       onClick={() => navigate('/formulario')}
     >
       Comenzar Test
     </button>
-          <div className="decorations">
-            <div className="circle-decoration"></div>
-            <div className="square-decoration"></div>
-          </div>
-        </div>
-      </section>
+
+    {/* Botón de WhatsApp */}
+    <a
+      href="https://wa.me/5215555555555?text=Hola,%20quiero%20más%20información%20sobre%20las%20universidades."
+      target="_blank"
+      rel="noopener noreferrer"
+      className="whatsapp-button"
+    >
+      <img
+        src="https://img.icons8.com/ios-filled/50/25D366/whatsapp.png"
+        alt="WhatsApp"
+        className="inline w-5 h-5 mr-2"
+      />
+      Contáctanos por WhatsApp
+    </a>
+
+    <div className="decorations">
+      <div className="circle-decoration"></div>
+      <div className="square-decoration"></div>
+    </div>
+  </div>
+</section>
+
     </div>
   );
 };

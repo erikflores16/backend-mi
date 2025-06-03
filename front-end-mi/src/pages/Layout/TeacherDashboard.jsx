@@ -6,7 +6,6 @@ import {
   Edit,
   Trash2,
   PlusCircle,
-  Check,
   X,
 } from "lucide-react";
 import axios from "axios";
@@ -20,6 +19,10 @@ const TeacherDashboard = () => {
     pdf: null,
   });
   const [subscriptionPlans, setSubscriptionPlans] = useState([]);
+
+  // Estado para la modal de método de pago
+  const [showPaymentModal, setShowPaymentModal] = useState(false);
+  const [selectedPlan, setSelectedPlan] = useState(null);
 
   useEffect(() => {
     const fetchCarreras = async () => {
@@ -64,7 +67,14 @@ const TeacherDashboard = () => {
   };
 
   const handleSelectPlan = (plan) => {
-    navigate("/teacher-dashboard-payment", { state: { planId: plan.id } });
+    setSelectedPlan(plan);
+    setShowPaymentModal(true);
+  };
+
+  const handlePaymentMethod = (method) => {
+    navigate("/teacher-dashboard-payment", {
+      state: { planId: selectedPlan.id, metodo: method },
+    });
   };
 
   return (
@@ -176,9 +186,43 @@ const TeacherDashboard = () => {
           </div>
         </section>
       </main>
+
+      {/* Modal de métodos de pago */}
+      {showPaymentModal && (
+        <div className="fixed inset-0 bg-black bg-opacity-40 flex items-center justify-center z-50">
+          <div className="bg-white rounded-xl p-6 w-full max-w-md shadow-lg relative">
+            <button
+              onClick={() => setShowPaymentModal(false)}
+              className="absolute top-3 right-3 text-gray-500 hover:text-gray-700"
+            >
+              <X size={20} />
+            </button>
+            <h3 className="text-xl font-semibold mb-4 text-center">Selecciona un método de pago</h3>
+            <div className="space-y-3">
+              <button
+                onClick={() => handlePaymentMethod("tarjeta")}
+                className="w-full bg-blue-600 hover:bg-blue-700 text-white py-2 rounded-lg transition"
+              >
+                Tarjeta de Crédito/Débito
+              </button>
+              <button
+                onClick={() => handlePaymentMethod("paypal")}
+                className="w-full bg-yellow-500 hover:bg-yellow-600 text-white py-2 rounded-lg transition"
+              >
+                PayPal
+              </button>
+              <button
+                onClick={() => handlePaymentMethod("transferencia")}
+                className="w-full bg-green-600 hover:bg-green-700 text-white py-2 rounded-lg transition"
+              >
+                Transferencia Bancaria
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
 
 export default TeacherDashboard;
-  
