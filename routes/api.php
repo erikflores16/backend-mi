@@ -25,7 +25,7 @@ use App\Http\Controllers\DashboardController;
 Route::get('/dashboard-data', [DashboardController::class, 'getDashboardData']);
 
 Route::prefix('auth')->group(function () {
-    Route::post('register', [AuthController::class, 'register']);
+Route::post('/register', [AuthController::class, 'register']);
     Route::post('login', [AuthController::class, 'login']);
 });
 
