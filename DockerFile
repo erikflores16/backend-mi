@@ -39,3 +39,5 @@ EXPOSE 80
 
 # Comando para iniciar Apache en primer plano
 CMD ["apache2-foreground"]
+
+# otra
