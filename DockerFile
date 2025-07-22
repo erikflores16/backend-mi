@@ -38,10 +38,4 @@ RUN a2dissite 000-default.conf \
 EXPOSE 80
 
 # Comando para iniciar Apache en primer plano
-<<<<<<< HEAD
 CMD ["apache2-foreground"]
-=======
-CMD ["apache2-foreground"]
-
-# otra
->>>>>>> 82e86e830b8368df27e0220a4b64f28d020e87b7
