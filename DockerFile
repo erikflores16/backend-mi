@@ -1,6 +1,9 @@
 FROM php:8.2-apache
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> df58414ece0d31f4a32cbd96a884b7f380151b88
 # Habilitar módulos Apache
 RUN a2enmod rewrite headers proxy_http
 
