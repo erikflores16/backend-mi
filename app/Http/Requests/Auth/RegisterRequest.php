@@ -1,28 +1,26 @@
 <?php
 
-namespace App\Http\Requests\Auth;
+namespace App\Http\Controllers\Auth;
 
-use Illuminate\Foundation\Http\FormRequest;
+use App\Http\Controllers\Controller;
+use App\Http\Requests\Auth\RegisterRequest;
+use App\Models\User;
 
-class RegisterRequest extends FormRequest
+class AuthController extends Controller
 {
-    /**
-     * Determina si el usuario está autorizado para hacer esta solicitud.
-     */
-    public function authorize(): bool
+    public function register(RegisterRequest $request)
     {
-        return true;
-    }
+        $data = $request->validated();
 
-    /**
-     * Reglas de validación para el registro de usuario.
-     */
-    public function rules(): array
-    {
-        return [
-            'name' => 'required|string|max:100',
-            'email' => 'required|email|unique:usuarios,email',
-            'password' => 'required|string|min:8|max:50|confirmed',
-        ];
+        $user = User::create([
+            'name' => $data['name'],
+            'email' => $data['email'],
+            'password' => $data['password'], // Laravel hashea automáticamente
+        ]);
+
+        return response()->json([
+            'message' => 'Usuario registrado correctamente',
+            'user' => $user,
+        ], 201);
     }
 }
