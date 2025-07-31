@@ -9,7 +9,8 @@ use App\Models\User;
 class AuthController extends Controller
 {
     public function register(RegisterRequest $request)
-    {
+{
+    try {
         $data = $request->validated();
 
         $user = User::create([
@@ -22,5 +23,13 @@ class AuthController extends Controller
             'message' => 'Usuario registrado correctamente',
             'user' => $user,
         ], 201);
+
+    } catch (\Exception $e) {
+        // Devuelve el mensaje del error para depuración
+        return response()->json([
+            'error' => 'Error al registrar usuario',
+            'message' => $e->getMessage(),
+        ], 500);
     }
+}
 }
