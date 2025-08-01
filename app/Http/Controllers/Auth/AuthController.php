@@ -32,4 +32,26 @@ class AuthController extends Controller
             ], 500);
         }
     }
+     public function login(LoginRequest $request)
+    {
+        $credentials = $request->validated();
+
+        if (!Auth::attempt($credentials)) {
+            return response()->json([
+                'message' => 'Credenciales inválidas'
+            ], 401);
+        }
+
+        $user = Auth::user();
+
+        // Si usas Laravel Sanctum para API tokens:
+        $token = $user->createToken('auth_token')->plainTextToken;
+
+        return response()->json([
+            'message' => 'Login exitoso',
+            'access_token' => $token,
+            'token_type' => 'Bearer',
+            'user' => $user,
+        ]);
+    }
 }
