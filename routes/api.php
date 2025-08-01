@@ -7,7 +7,11 @@ use App\Http\Controllers\UsuarioController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CareerController;
 use App\Http\Controllers\PlanController;
+use App\Models\User;
 
+Route::get('/usuarios', function () {
+    return response()->json(User::all());
+});
 // Comenta o elimina esta línea y ruta si no tienes DashboardController aún
 // use App\Http\Controllers\DashboardController;
 // Route::get('/dashboard-data', [DashboardController::class, 'getDashboardData']);
